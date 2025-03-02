@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgba(148, 196, 250, 0.377);
 }
 
 h1 {
@@ -52,6 +53,7 @@ button {
   font-family: inherit;
   cursor: pointer;
   margin-right: 25px;
+
   box-shadow: 1px 1px 0 rgb(173, 173, 173);
 }
 button:hover {
@@ -71,6 +73,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #effce2b6;
   }
 }
