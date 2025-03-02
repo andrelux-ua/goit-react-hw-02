@@ -33,18 +33,26 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+ol,
+ul {
+  list-style: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 4px;
+  border: 2px solid rgba(88, 88, 88, 0.562);
+  border-right: 3px solid rgba(0, 0, 0, 0.9);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.9);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  margin-right: 25px;
+  box-shadow: 1px 1px 0 rgb(173, 173, 173);
 }
 button:hover {
   border-color: #646cff;
