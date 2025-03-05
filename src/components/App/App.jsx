@@ -10,23 +10,25 @@ function App() {
     const savedClicks = window.localStorage.getItem('saved-clicks');
     return savedClicks
       ? JSON.parse(savedClicks)
-      : {
-          good: 0,
-          neutral: 0,
-          bad: 0,
-        };
+      : { good: 0, neutral: 0, bad: 0 };
   });
-  const updateFeedback = feedbackType => {
-    setFeedback(oldFeedback => ({
-      ...oldFeedback,
-      [feedbackType]: oldFeedback[feedbackType] + 1,
-    }));
-  };
-  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
   useEffect(() => {
     window.localStorage.setItem('saved-clicks', JSON.stringify(feedback));
   }, [feedback]);
+
+  const updateFeedback = feedbackType => {
+    setFeedback(prevFeedback => ({
+      ...prevFeedback,
+      [feedbackType]: prevFeedback[feedbackType] + 1,
+    }));
+  };
+
+  const resetFeedback = () => {
+    setFeedback({ good: 0, neutral: 0, bad: 0 });
+  };
+
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
   return (
     <>
@@ -34,7 +36,7 @@ function App() {
       <Options
         updateFeedback={updateFeedback}
         totalFeedback={totalFeedback}
-        setFeedback={setFeedback}
+        resetFeedback={resetFeedback}
       />
       {totalFeedback ? (
         <Feedback feedback={feedback} totalFeedback={totalFeedback} />
